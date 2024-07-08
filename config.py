@@ -7,7 +7,7 @@ policy = "Gaussian"
 
 gamma = 0.99
 tau = 0.005
-lr = 0.00015
+lr = 0.001
 alpha = 0.2
 
 seed = 123456
@@ -16,7 +16,7 @@ hidden_size = 64
 Success_Standard = 0.9
 
 num_steps = 10000001
-batch_size = 4096
+batch_size = 512
 start_steps = 10000
 max_episode_steps = 256
 time_sleep_interval = 0.05

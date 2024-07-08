@@ -58,7 +58,7 @@ def train():
         episode_timesteps += 1
 
         # Select action
-        if t < 100000:
+        if t < 10000:
             action = env.action_space.sample()
         else:
             action = agent.select_action(np.array(state))
@@ -76,7 +76,7 @@ def train():
         episode_reward += reward
 
         # Train agent
-        if len(replay_buffer) > 100000:
+        if len(replay_buffer) > 10000:
             agent.train(replay_buffer)
 
         if done:

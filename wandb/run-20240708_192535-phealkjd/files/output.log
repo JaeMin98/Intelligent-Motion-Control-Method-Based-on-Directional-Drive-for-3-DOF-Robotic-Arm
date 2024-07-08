@@ -1,0 +1,9 @@
+
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+move_group.go EXCEPT,  [0.08371823215890545, 0.48582956715253045, -1.350022039374017, 0, 0, 0]
+Episode: 1, Reward: 17.749000000000017
+move_group.go EXCEPT,  [1.9148509780612117, 0.6142497637639017, -1.0117754324332207, 0, 0, 0]
+Episode: 2, Reward: 5.310000000000008
+move_group.go EXCEPT,  [1.660461164822776, 0.6151331082821698, -0.8451352170902044, 0, 0, 0]
+Episode: 3, Reward: 6.166
+move_group.go EXCEPT,  [1.2810660438860018, 0.6155080768936301, -0.5953912193973947, 0, 0, 0]

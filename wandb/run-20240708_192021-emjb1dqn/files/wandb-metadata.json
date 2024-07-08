@@ -1,0 +1,128 @@
+{
+    "os": "Linux-5.15.0-113-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2024-07-08T10:20:22.754299",
+    "startedAt": "2024-07-08T10:20:21.846478",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/smartcps/catkin_ws/src/my_package/github/Refer1/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/JaeMin98/Intelligent-Motion-Control-Method-Based-on-Directional-Drive-for-3-DOF-Robotic-Arm.git",
+        "commit": "a18b7cc13f014c72bc42d2ad13b62eaa18a1f57b"
+    },
+    "email": "81763871+JaeMin98@users.noreply.github.com",
+    "root": "/home/smartcps/catkin_ws/src/my_package/github/Refer1",
+    "host": "smartcps",
+    "username": "smartcps",
+    "executable": "/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3940.3001249999998,
+        "min": 3000.0,
+        "max": 4500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3923.523,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3716.149,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3369.07,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2746.492,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3294.454,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3442.521,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3004.945,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 5472.43,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 3945.354,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2873.17,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4161.777,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2825.615,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2882.562,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 4172.818,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 2971.51,
+            "min": 3000.0,
+            "max": 4500.0
+        },
+        {
+            "current": 5479.058,
+            "min": 3000.0,
+            "max": 4500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 479.5502014160156,
+            "used": 22.164756774902344
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4070 Ti",
+            "memory_total": 12878610432
+        }
+    ],
+    "memory": {
+        "total": 30.490596771240234
+    }
+}

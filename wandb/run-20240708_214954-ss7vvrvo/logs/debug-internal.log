@@ -1,0 +1,66 @@
+2024-07-08 21:49:54,207 INFO    StreamThr :620330 [internal.py:wandb_internal():85] W&B internal server running at pid: 620330, started at: 2024-07-08 21:49:54.206733
+2024-07-08 21:49:54,211 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: status
+2024-07-08 21:49:54,215 INFO    WriterThread:620330 [datastore.py:open_for_write():87] open: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/run-ss7vvrvo.wandb
+2024-07-08 21:49:54,216 DEBUG   SenderThread:620330 [sender.py:send():379] send: header
+2024-07-08 21:49:54,225 DEBUG   SenderThread:620330 [sender.py:send():379] send: run
+2024-07-08 21:49:54,861 INFO    SenderThread:620330 [dir_watcher.py:__init__():211] watching files in: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files
+2024-07-08 21:49:54,861 INFO    SenderThread:620330 [sender.py:_start_run_threads():1188] run started: ss7vvrvo with start time 1720442994.204601
+2024-07-08 21:49:54,868 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: check_version
+2024-07-08 21:49:54,868 DEBUG   SenderThread:620330 [sender.py:send_request():406] send_request: check_version
+2024-07-08 21:49:55,083 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: run_start
+2024-07-08 21:49:55,119 DEBUG   HandlerThread:620330 [system_info.py:__init__():26] System info init
+2024-07-08 21:49:55,119 DEBUG   HandlerThread:620330 [system_info.py:__init__():41] System info init done
+2024-07-08 21:49:55,119 INFO    HandlerThread:620330 [system_monitor.py:start():194] Starting system monitor
+2024-07-08 21:49:55,120 INFO    SystemMonitor:620330 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-07-08 21:49:55,120 INFO    HandlerThread:620330 [system_monitor.py:probe():214] Collecting system info
+2024-07-08 21:49:55,121 INFO    SystemMonitor:620330 [interfaces.py:start():188] Started cpu monitoring
+2024-07-08 21:49:55,122 INFO    SystemMonitor:620330 [interfaces.py:start():188] Started disk monitoring
+2024-07-08 21:49:55,123 ERROR   disk      :620330 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:49:55,124 INFO    SystemMonitor:620330 [interfaces.py:start():188] Started gpu monitoring
+2024-07-08 21:49:55,125 INFO    SystemMonitor:620330 [interfaces.py:start():188] Started memory monitoring
+2024-07-08 21:49:55,125 ERROR   disk      :620330 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:49:55,126 INFO    SystemMonitor:620330 [interfaces.py:start():188] Started network monitoring
+2024-07-08 21:49:55,188 DEBUG   HandlerThread:620330 [system_info.py:probe():152] Probing system
+2024-07-08 21:49:55,196 DEBUG   HandlerThread:620330 [system_info.py:_probe_git():137] Probing git
+2024-07-08 21:49:55,212 DEBUG   HandlerThread:620330 [system_info.py:_probe_git():145] Probing git done
+2024-07-08 21:49:55,212 DEBUG   HandlerThread:620330 [system_info.py:probe():200] Probing system done
+2024-07-08 21:49:55,212 DEBUG   HandlerThread:620330 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-113-generic-x86_64-with-glibc2.29', 'python': '3.8.10', 'heartbeatAt': '2024-07-08T12:49:55.188775', 'startedAt': '2024-07-08T12:49:54.199179', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/smartcps/catkin_ws/src/my_package/github/Refer1/main.py', 'codePathLocal': 'main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/JaeMin98/Intelligent-Motion-Control-Method-Based-on-Directional-Drive-for-3-DOF-Robotic-Arm.git', 'commit': 'a18b7cc13f014c72bc42d2ad13b62eaa18a1f57b'}, 'email': '81763871+JaeMin98@users.noreply.github.com', 'root': '/home/smartcps/catkin_ws/src/my_package/github/Refer1', 'host': 'smartcps', 'username': 'smartcps', 'executable': '/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 3854.6319999999996, 'min': 3000.0, 'max': 4500.0}, 'cpu_freq_per_core': [{'current': 3660.79, 'min': 3000.0, 'max': 4500.0}, {'current': 3240.059, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.207, 'min': 3000.0, 'max': 4500.0}, {'current': 2743.346, 'min': 3000.0, 'max': 4500.0}, {'current': 2958.246, 'min': 3000.0, 'max': 4500.0}, {'current': 2829.063, 'min': 3000.0, 'max': 4500.0}, {'current': 2741.934, 'min': 3000.0, 'max': 4500.0}, {'current': 5488.849, 'min': 3000.0, 'max': 4500.0}, {'current': 2743.506, 'min': 3000.0, 'max': 4500.0}, {'current': 3241.582, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.601, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.848, 'min': 3000.0, 'max': 4500.0}, {'current': 3073.329, 'min': 3000.0, 'max': 4500.0}, {'current': 2858.753, 'min': 3000.0, 'max': 4500.0}, {'current': 4865.735, 'min': 3000.0, 'max': 4500.0}, {'current': 5486.408, 'min': 3000.0, 'max': 4500.0}], 'disk': {'/': {'total': 479.5502014160156, 'used': 22.164936065673828}}, 'gpu': 'NVIDIA GeForce RTX 4070 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4070 Ti', 'memory_total': 12878610432}], 'memory': {'total': 30.490596771240234}}
+2024-07-08 21:49:55,213 INFO    HandlerThread:620330 [system_monitor.py:probe():224] Finished collecting system info
+2024-07-08 21:49:55,213 INFO    HandlerThread:620330 [system_monitor.py:probe():227] Publishing system info
+2024-07-08 21:49:55,213 DEBUG   HandlerThread:620330 [system_info.py:_save_code():44] Saving code
+2024-07-08 21:49:55,218 DEBUG   HandlerThread:620330 [system_info.py:_save_code():67] Saving code done
+2024-07-08 21:49:55,218 DEBUG   HandlerThread:620330 [system_info.py:_save_patches():84] Saving git patches
+2024-07-08 21:49:55,257 DEBUG   HandlerThread:620330 [system_info.py:_save_patches():126] Saving git patches done
+2024-07-08 21:49:55,260 INFO    HandlerThread:620330 [system_monitor.py:probe():229] Finished publishing system info
+2024-07-08 21:49:55,263 DEBUG   SenderThread:620330 [sender.py:send():379] send: files
+2024-07-08 21:49:55,263 INFO    SenderThread:620330 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-07-08 21:49:55,266 INFO    SenderThread:620330 [sender.py:_save_file():1454] saving file code/main.py with policy now
+2024-07-08 21:49:55,274 INFO    SenderThread:620330 [sender.py:_save_file():1454] saving file diff.patch with policy now
+2024-07-08 21:49:55,456 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: python_packages
+2024-07-08 21:49:55,456 DEBUG   SenderThread:620330 [sender.py:send_request():406] send_request: python_packages
+2024-07-08 21:49:55,458 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-08 21:49:55,458 DEBUG   SenderThread:620330 [sender.py:send_request():406] send_request: stop_status
+2024-07-08 21:49:55,464 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:49:55,787 DEBUG   SenderThread:620330 [sender.py:send():379] send: telemetry
+2024-07-08 21:49:55,788 DEBUG   SenderThread:620330 [sender.py:send():379] send: telemetry
+2024-07-08 21:49:55,788 DEBUG   SenderThread:620330 [sender.py:send():379] send: run
+2024-07-08 21:49:55,866 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/config.yaml
+2024-07-08 21:49:55,867 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/diff.patch
+2024-07-08 21:49:55,867 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/wandb-metadata.json
+2024-07-08 21:49:55,867 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/requirements.txt
+2024-07-08 21:49:55,868 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/code/main.py
+2024-07-08 21:49:55,868 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/code
+2024-07-08 21:49:55,997 INFO    SenderThread:620330 [sender.py:send_run():1035] updated run: ss7vvrvo
+2024-07-08 21:49:55,997 DEBUG   SenderThread:620330 [sender.py:send():379] send: telemetry
+2024-07-08 21:49:56,045 INFO    wandb-upload_0:620330 [upload_job.py:push():130] Uploaded file /tmp/tmpxubg4dgywandb/ahbk152w-wandb-metadata.json
+2024-07-08 21:49:56,046 INFO    wandb-upload_2:620330 [upload_job.py:push():130] Uploaded file /tmp/tmpxubg4dgywandb/xe78rpwl-diff.patch
+2024-07-08 21:49:56,121 INFO    wandb-upload_1:620330 [upload_job.py:push():130] Uploaded file /tmp/tmpxubg4dgywandb/9tj1dy7z-code/main.py
+2024-07-08 21:49:56,636 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:49:56,862 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/output.log
+2024-07-08 21:49:57,126 ERROR   disk      :620330 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:49:57,127 ERROR   disk      :620330 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:49:57,643 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:49:58,639 DEBUG   HandlerThread:620330 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:49:58,863 INFO    Thread-17 :620330 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_214954-ss7vvrvo/files/output.log
+2024-07-08 21:49:59,129 ERROR   disk      :620330 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:49:59,130 ERROR   disk      :620330 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'

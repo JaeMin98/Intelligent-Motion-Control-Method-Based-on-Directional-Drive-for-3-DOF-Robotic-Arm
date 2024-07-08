@@ -1,0 +1,106 @@
+2024-07-08 21:53:08,693 INFO    StreamThr :621948 [internal.py:wandb_internal():85] W&B internal server running at pid: 621948, started at: 2024-07-08 21:53:08.692979
+2024-07-08 21:53:08,696 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: status
+2024-07-08 21:53:08,700 INFO    WriterThread:621948 [datastore.py:open_for_write():87] open: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/run-q8931lql.wandb
+2024-07-08 21:53:08,700 DEBUG   SenderThread:621948 [sender.py:send():379] send: header
+2024-07-08 21:53:08,717 DEBUG   SenderThread:621948 [sender.py:send():379] send: run
+2024-07-08 21:53:09,293 INFO    SenderThread:621948 [dir_watcher.py:__init__():211] watching files in: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files
+2024-07-08 21:53:09,293 INFO    SenderThread:621948 [sender.py:_start_run_threads():1188] run started: q8931lql with start time 1720443188.691601
+2024-07-08 21:53:09,306 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: check_version
+2024-07-08 21:53:09,307 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: check_version
+2024-07-08 21:53:09,501 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: run_start
+2024-07-08 21:53:09,542 DEBUG   HandlerThread:621948 [system_info.py:__init__():26] System info init
+2024-07-08 21:53:09,542 DEBUG   HandlerThread:621948 [system_info.py:__init__():41] System info init done
+2024-07-08 21:53:09,542 INFO    HandlerThread:621948 [system_monitor.py:start():194] Starting system monitor
+2024-07-08 21:53:09,543 INFO    HandlerThread:621948 [system_monitor.py:probe():214] Collecting system info
+2024-07-08 21:53:09,543 INFO    SystemMonitor:621948 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-07-08 21:53:09,543 INFO    SystemMonitor:621948 [interfaces.py:start():188] Started cpu monitoring
+2024-07-08 21:53:09,544 INFO    SystemMonitor:621948 [interfaces.py:start():188] Started disk monitoring
+2024-07-08 21:53:09,545 INFO    SystemMonitor:621948 [interfaces.py:start():188] Started gpu monitoring
+2024-07-08 21:53:09,546 INFO    SystemMonitor:621948 [interfaces.py:start():188] Started memory monitoring
+2024-07-08 21:53:09,547 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:09,547 INFO    SystemMonitor:621948 [interfaces.py:start():188] Started network monitoring
+2024-07-08 21:53:09,547 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:09,633 DEBUG   HandlerThread:621948 [system_info.py:probe():152] Probing system
+2024-07-08 21:53:09,641 DEBUG   HandlerThread:621948 [system_info.py:_probe_git():137] Probing git
+2024-07-08 21:53:09,655 DEBUG   HandlerThread:621948 [system_info.py:_probe_git():145] Probing git done
+2024-07-08 21:53:09,655 DEBUG   HandlerThread:621948 [system_info.py:probe():200] Probing system done
+2024-07-08 21:53:09,655 DEBUG   HandlerThread:621948 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-113-generic-x86_64-with-glibc2.29', 'python': '3.8.10', 'heartbeatAt': '2024-07-08T12:53:09.634140', 'startedAt': '2024-07-08T12:53:08.686495', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/smartcps/catkin_ws/src/my_package/github/Refer1/main.py', 'codePathLocal': 'main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/JaeMin98/Intelligent-Motion-Control-Method-Based-on-Directional-Drive-for-3-DOF-Robotic-Arm.git', 'commit': 'a18b7cc13f014c72bc42d2ad13b62eaa18a1f57b'}, 'email': '81763871+JaeMin98@users.noreply.github.com', 'root': '/home/smartcps/catkin_ws/src/my_package/github/Refer1', 'host': 'smartcps', 'username': 'smartcps', 'executable': '/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 3887.2659999999996, 'min': 3000.0, 'max': 4500.0}, 'cpu_freq_per_core': [{'current': 2914.675, 'min': 3000.0, 'max': 4500.0}, {'current': 2724.469, 'min': 3000.0, 'max': 4500.0}, {'current': 2730.706, 'min': 3000.0, 'max': 4500.0}, {'current': 5442.103, 'min': 3000.0, 'max': 4500.0}, {'current': 3012.708, 'min': 3000.0, 'max': 4500.0}, {'current': 2732.98, 'min': 3000.0, 'max': 4500.0}, {'current': 2734.067, 'min': 3000.0, 'max': 4500.0}, {'current': 2743.51, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.899, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.826, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.688, 'min': 3000.0, 'max': 4500.0}, {'current': 5485.415, 'min': 3000.0, 'max': 4500.0}, {'current': 3093.352, 'min': 3000.0, 'max': 4500.0}, {'current': 2742.306, 'min': 3000.0, 'max': 4500.0}, {'current': 2724.386, 'min': 3000.0, 'max': 4500.0}, {'current': 3121.691, 'min': 3000.0, 'max': 4500.0}], 'disk': {'/': {'total': 479.5502014160156, 'used': 22.16501235961914}}, 'gpu': 'NVIDIA GeForce RTX 4070 Ti', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4070 Ti', 'memory_total': 12878610432}], 'memory': {'total': 30.490596771240234}}
+2024-07-08 21:53:09,655 INFO    HandlerThread:621948 [system_monitor.py:probe():224] Finished collecting system info
+2024-07-08 21:53:09,655 INFO    HandlerThread:621948 [system_monitor.py:probe():227] Publishing system info
+2024-07-08 21:53:09,655 DEBUG   HandlerThread:621948 [system_info.py:_save_code():44] Saving code
+2024-07-08 21:53:09,662 DEBUG   HandlerThread:621948 [system_info.py:_save_code():67] Saving code done
+2024-07-08 21:53:09,662 DEBUG   HandlerThread:621948 [system_info.py:_save_patches():84] Saving git patches
+2024-07-08 21:53:09,705 DEBUG   HandlerThread:621948 [system_info.py:_save_patches():126] Saving git patches done
+2024-07-08 21:53:09,708 INFO    HandlerThread:621948 [system_monitor.py:probe():229] Finished publishing system info
+2024-07-08 21:53:09,711 DEBUG   SenderThread:621948 [sender.py:send():379] send: files
+2024-07-08 21:53:09,711 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-07-08 21:53:09,712 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file code/main.py with policy now
+2024-07-08 21:53:09,713 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file diff.patch with policy now
+2024-07-08 21:53:09,921 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: python_packages
+2024-07-08 21:53:09,921 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: python_packages
+2024-07-08 21:53:09,922 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-08 21:53:09,923 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: stop_status
+2024-07-08 21:53:09,928 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:53:10,222 DEBUG   SenderThread:621948 [sender.py:send():379] send: telemetry
+2024-07-08 21:53:10,222 DEBUG   SenderThread:621948 [sender.py:send():379] send: telemetry
+2024-07-08 21:53:10,222 DEBUG   SenderThread:621948 [sender.py:send():379] send: run
+2024-07-08 21:53:10,297 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/config.yaml
+2024-07-08 21:53:10,297 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/requirements.txt
+2024-07-08 21:53:10,297 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/wandb-metadata.json
+2024-07-08 21:53:10,298 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/diff.patch
+2024-07-08 21:53:10,298 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/code/main.py
+2024-07-08 21:53:10,298 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/code
+2024-07-08 21:53:10,425 INFO    wandb-upload_0:621948 [upload_job.py:push():130] Uploaded file /tmp/tmpwyap0ygbwandb/bpsrqypc-wandb-metadata.json
+2024-07-08 21:53:10,440 INFO    SenderThread:621948 [sender.py:send_run():1035] updated run: q8931lql
+2024-07-08 21:53:10,440 DEBUG   SenderThread:621948 [sender.py:send():379] send: telemetry
+2024-07-08 21:53:10,499 INFO    wandb-upload_1:621948 [upload_job.py:push():130] Uploaded file /tmp/tmpwyap0ygbwandb/tzqi8mc1-code/main.py
+2024-07-08 21:53:10,525 INFO    wandb-upload_2:621948 [upload_job.py:push():130] Uploaded file /tmp/tmpwyap0ygbwandb/1f2mn7kz-diff.patch
+2024-07-08 21:53:11,265 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:53:11,294 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/output.log
+2024-07-08 21:53:11,548 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:11,549 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:12,263 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:53:13,263 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:53:13,296 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/output.log
+2024-07-08 21:53:13,549 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:13,550 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:13,751 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: status_report
+2024-07-08 21:53:13,752 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:13,753 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:13,754 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:13,754 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:13,755 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:13,755 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:13,755 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:13,756 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:14,052 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:14,052 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:14,053 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:14,053 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:14,054 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:14,054 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:14,054 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:14,055 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:14,263 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:53:14,296 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_created():271] file/dir created: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/wandb-summary.json
+2024-07-08 21:53:14,337 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:14,338 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:14,338 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:14,339 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:14,339 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:14,340 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:14,340 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:14,341 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:14,693 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:14,694 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: partial_history
+2024-07-08 21:53:14,694 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:14,695 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:14,699 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:14,699 DEBUG   SenderThread:621948 [sender.py:send():379] send: history
+2024-07-08 21:53:14,699 DEBUG   SenderThread:621948 [sender.py:send_request():406] send_request: summary_record
+2024-07-08 21:53:14,700 INFO    SenderThread:621948 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-07-08 21:53:15,263 DEBUG   HandlerThread:621948 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-08 21:53:15,297 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/wandb-summary.json
+2024-07-08 21:53:15,297 INFO    Thread-17 :621948 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/smartcps/catkin_ws/src/my_package/github/Refer1/wandb/run-20240708_215308-q8931lql/files/output.log
+2024-07-08 21:53:15,551 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'
+2024-07-08 21:53:15,551 ERROR   disk      :621948 [interfaces.py:monitor():142] Failed to sample metric: not sure how to interpret line '   7       0 loop0 45 0 698 105 0 0 0 0 0 120 105 0 0 0 0 0 0\n'

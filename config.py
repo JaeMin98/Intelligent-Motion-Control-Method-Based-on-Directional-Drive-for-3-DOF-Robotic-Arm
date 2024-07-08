@@ -1,27 +1,36 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
+import torch
 
-cuda = "cuda:0"
-env_name = 'ned2'
-policy = "Gaussian"
+# 환경 설정
+ENV_NAME = 'Pendulum-v1'
+SEED = 0
 
-gamma = 0.99
-tau = 0.005
-lr = 0.001
-alpha = 0.2
+# 학습 설정
+EPISODES = 100000
+MAX_STEPS = 256
 
-seed = 123456
+# DDPG 하이퍼파라미터
+ACTOR_LR = 1e-4
+CRITIC_LR = 1e-3
+GAMMA = 0.99
+TAU = 0.001
+BATCH_SIZE = 4056
 
-hidden_size = 64
-Success_Standard = 0.9
+# 리플레이 버퍼 설정
+BUFFER_SIZE = 100000
 
-num_steps = 10000001
-batch_size = 512
-start_steps = 10000
-max_episode_steps = 256
-time_sleep_interval = 0.05
+# 노이즈 설정
+NOISE_MU = 0
+NOISE_THETA = 0.15
+NOISE_SIGMA = 0.02
 
-isExit_IfSuccessLearning = True #목표 달성 시(success rate 0.9이상일 때) 학습을 종료할 것인지
+# 신경망 구조
+HIDDEN1_UNITS = 400
+HIDDEN2_UNITS = 300
 
-replay_size = num_steps #1000000
-cuda = "cuda"
+# 기기 설정
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+# 모델 저장 및 로드 설정
+SAVE_INTERVAL = 100
+ACTOR_PATH = 'actor.pth'
+CRITIC_PATH = 'critic.pth'

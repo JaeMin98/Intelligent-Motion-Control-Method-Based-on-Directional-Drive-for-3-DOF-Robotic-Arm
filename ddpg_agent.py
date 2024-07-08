@@ -1,77 +1,77 @@
 import torch
 import torch.nn.functional as F
-import numpy as np
-from networks import Actor, Critic
+from actor import Actor
+from critic import Critic
+from replay_buffer import ReplayBuffer
+from noise import OUNoise
 import config
 
-
 class DDPGAgent:
-    def __init__(self, state_dim, action_dim, max_action, device):
-        self.actor = Actor(state_dim, action_dim, max_action).to(device)
-        self.actor_target = Actor(state_dim, action_dim, max_action).to(device)
+    def __init__(self, state_dim, action_dim, max_action):
+        self.actor = Actor(state_dim, action_dim, max_action).to(config.DEVICE)
+        self.actor_target = Actor(state_dim, action_dim, max_action).to(config.DEVICE)
         self.actor_target.load_state_dict(self.actor.state_dict())
-        self.actor_optimizer = torch.optim.Adam(self.actor.parameters())
+        self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=config.ACTOR_LR)
 
-        self.critic = Critic(state_dim, action_dim).to(device)
-        self.critic_target = Critic(state_dim, action_dim).to(device)
+        self.critic = Critic(state_dim, action_dim).to(config.DEVICE)
+        self.critic_target = Critic(state_dim, action_dim).to(config.DEVICE)
         self.critic_target.load_state_dict(self.critic.state_dict())
-        self.critic_optimizer = torch.optim.Adam(self.critic.parameters())
+        self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=config.CRITIC_LR)
+
+        self.memory = ReplayBuffer(config.BUFFER_SIZE)
+        self.noise = OUNoise(action_dim, config.NOISE_MU, config.NOISE_THETA, config.NOISE_SIGMA)
 
         self.max_action = max_action
-        self.device = device
 
     def select_action(self, state):
-        state = torch.FloatTensor(state.reshape(1, -1)).to(self.device)
-        return self.actor(state).cpu().data.numpy().flatten()
+        state = torch.FloatTensor(state.reshape(1, -1)).to(config.DEVICE)
+        action = self.actor(state).cpu().data.numpy().flatten()
+        return (action + self.noise.sample() * self.max_action).clip(-self.max_action, self.max_action)
 
-    def train(self, replay_buffer):
-        # Sample a batch from memory
-        state, action, next_state, reward, done = replay_buffer.sample(config.batch_size)
-        
-        state = state.to(self.device)
-        action = action.to(self.device)
-        next_state = next_state.to(self.device)
-        reward = reward.to(self.device)
-        done = done.to(self.device)
+    def store_transition(self, state, action, reward, next_state, done):
+        self.memory.push(state, action, reward, next_state, done)
 
-        # Compute the target Q value
+    def update(self):
+        if len(self.memory) < config.BATCH_SIZE:
+            return
+
+        state, action, reward, next_state, done = self.memory.sample(config.BATCH_SIZE)
+
+        state = torch.FloatTensor(state).to(config.DEVICE)
+        action = torch.FloatTensor(action).to(config.DEVICE)
+        reward = torch.FloatTensor(reward).reshape(-1, 1).to(config.DEVICE)
+        next_state = torch.FloatTensor(next_state).to(config.DEVICE)
+        done = torch.FloatTensor(done).reshape(-1, 1).to(config.DEVICE)
+
+        # Update Critic
         target_Q = self.critic_target(next_state, self.actor_target(next_state))
-        target_Q = reward + (done * config.gamma * target_Q).detach()
-
-        # Get current Q estimate
+        target_Q = reward + (1 - done) * config.GAMMA * target_Q
         current_Q = self.critic(state, action)
 
-        # Compute critic loss
-        critic_loss = F.mse_loss(current_Q, target_Q)
-
-        # Optimize the critic
+        critic_loss = F.mse_loss(current_Q, target_Q.detach())
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
         self.critic_optimizer.step()
 
-        # Compute actor loss
+        # Update Actor
         actor_loss = -self.critic(state, self.actor(state)).mean()
-
-        # Optimize the actor
         self.actor_optimizer.zero_grad()
         actor_loss.backward()
         self.actor_optimizer.step()
 
-        # Update the frozen target models
+        # Update target networks
         for param, target_param in zip(self.critic.parameters(), self.critic_target.parameters()):
-            target_param.data.copy_(config.tau * param.data + (1 - config.tau) * target_param.data)
+            target_param.data.copy_(config.TAU * param.data + (1 - config.TAU) * target_param.data)
 
         for param, target_param in zip(self.actor.parameters(), self.actor_target.parameters()):
-            target_param.data.copy_(config.tau * param.data + (1 - config.tau) * target_param.data)
+            target_param.data.copy_(config.TAU * param.data + (1 - config.TAU) * target_param.data)
 
-    def save(self, filename):
-        torch.save(self.critic.state_dict(), filename + "_critic")
-        torch.save(self.critic_optimizer.state_dict(), filename + "_critic_optimizer")
-        torch.save(self.actor.state_dict(), filename + "_actor")
-        torch.save(self.actor_optimizer.state_dict(), filename + "_actor_optimizer")
+        return actor_loss, critic_loss
 
-    def load(self, filename):
-        self.critic.load_state_dict(torch.load(filename + "_critic"))
-        self.critic_optimizer.load_state_dict(torch.load(filename + "_critic_optimizer"))
-        self.actor.load_state_dict(torch.load(filename + "_actor"))
-        self.actor_optimizer.load_state_dict(torch.load(filename + "_actor_optimizer"))
+    def save_models(self):
+        torch.save(self.actor.state_dict(), config.ACTOR_PATH)
+        torch.save(self.critic.state_dict(), config.CRITIC_PATH)
+
+    def load_models(self):
+        self.actor.load_state_dict(torch.load(config.ACTOR_PATH))
+        self.critic.load_state_dict(torch.load(config.CRITIC_PATH))

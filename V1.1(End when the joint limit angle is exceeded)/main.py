@@ -5,7 +5,7 @@ import config
 import wandb
 import Env
 
-wandb.init(project='DDPG TEST')
+wandb.init(project='Refer1')
 wandb.run.name = 'DDPG_with_Limit'
 wandb.run.save()
 

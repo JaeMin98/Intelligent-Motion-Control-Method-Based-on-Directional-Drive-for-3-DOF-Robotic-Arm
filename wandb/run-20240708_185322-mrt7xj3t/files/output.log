@@ -1,5 +1,0 @@
-[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
-/home/smartcps/.local/lib/python3.8/site-packages/gym/utils/passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
-  if not isinstance(terminated, (bool, np.bool8)):
-state_dim: 3, action_dim: 1
-Episode: 1, Reward: -1344.7605777292872

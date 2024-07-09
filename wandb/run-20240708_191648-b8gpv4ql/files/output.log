@@ -1,5 +1,0 @@
-
-[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
-Episode: 1, Reward: 42.68799999999987
-Episode: 2, Reward: 53.485999999999684
-Episode: 3, Reward: 15.644999999999921

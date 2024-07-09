@@ -216,7 +216,7 @@ class Ned2_control(object):
         # print(f"Angle difference: {angle_difference} degrees")
 
         totalReward,isDone,isTruncated = self.get_reward(distance, angle_difference)
-        current_state = 1
+        current_state = self.get_state()
 
         return current_state,totalReward,isDone, isTruncated
     

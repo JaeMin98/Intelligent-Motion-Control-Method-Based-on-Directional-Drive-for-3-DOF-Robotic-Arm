@@ -1,10 +1,8 @@
-/actor.pth
-/critic.pth
+__pycache__/
+wandb/
 
-/__pycache__
-/wandb
-/models
 
-/DDPG/__pycache__
-/DDPG/wandb
-/DDPG/models
+/DDPG/__pycache__/
+/DDPG/wandb/
+
+*.pth

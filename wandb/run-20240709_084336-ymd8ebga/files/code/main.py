@@ -16,7 +16,7 @@ def main():
     env = Env.Ned2_control()
     np.random.seed(config.SEED)
 
-    state_dim = 15
+    state_dim = 14
     action_dim = 3
     max_action = 1.0
 
@@ -24,7 +24,7 @@ def main():
     
     for episode in range(config.EPISODES):
         env.reset()  # OpenAI Gym의 새로운 버전에 맞춰 수정
-        state = env.get_state()  # 새로운 env.get_state() 메소드 사용
+        state = env.get_initial_state()  # 새로운 env.get_state() 메소드 사용
         episode_reward = 0
         
         for step in range(config.MAX_STEPS):

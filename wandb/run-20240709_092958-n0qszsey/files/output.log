@@ -1,0 +1,8 @@
+
+[34m[1mwandb[39m[22m: [33mWARNING[39m Calling wandb.run.save without any arguments is deprecated.Changes to attributes are automatically persisted.
+<moveit_commander.robot.RobotCommander object at 0x7ff5a57ae070>
+Episode: 1, Reward: 60.99099999999992
+Episode: 2, Reward: 59.595999999999954
+Episode: 3, Reward: 48.521999999999736
+Episode: 4, Reward: 58.29900000000001
+move_group.go EXCEPT,  [-0.037187991252492905, 0.619637040562639, -0.3425778601313158, 0, 0, 0]

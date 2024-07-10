@@ -11,7 +11,6 @@ from moveit_msgs.msg import RobotState
 from tf.transformations import quaternion_matrix
 from gazebo_msgs.msg import ModelState 
 from gazebo_msgs.srv import SetModelState
-import config
 import math
 import time
 import numpy as np
@@ -26,8 +25,6 @@ class Ned2_control(object):
         move_group = moveit_commander.MoveGroupCommander(group_name) # move_group node로 동작을 계획하고,  실행 
         self.robot = moveit_commander.RobotCommander()
         self.move_group = move_group
-
-        print(self.robot)
 
         self.target = [0,0,0] #target 위치
 
@@ -47,7 +44,7 @@ class Ned2_control(object):
 
         # time_step
         self.time_step = 0
-        self.MAX_time_step = config.MAX_STEPS
+        self.MAX_time_step = 200
 
         self.prev_linear_velocity = [0, 0, 0]
 
@@ -128,7 +125,7 @@ class Ned2_control(object):
         try:
             self.move_group.go(joint, wait=self.Iswait)
         except:
-            print("move_group.go EXCEPT, ", joint)
+            # print("move_group.go EXCEPT, ", joint)
             self.isLimited = True
 
         self.time_step += 1
@@ -188,12 +185,13 @@ class Ned2_control(object):
         elif(df*0.5 > distance >= df*0.1): R_distance = 0.17
         elif(df*0.1 > distance >= 0): R_distance = 1.17
 
-        isDone, isTruncated = False, False
-        if(self.time_step >= self.MAX_time_step) or (self.isLimited == True) or (self.get_endeffector_position()[2] < 0.1): isDone,isTruncated = False, True
-        if(distance <= 0.03): isDone,isTruncated = True,False
+        isDone, IsSuccess = False, False
+        # if(self.time_step >= self.MAX_time_step) or (self.get_endeffector_position()[2] < 0.1) : isDone,IsSuccess = True, False
+        if(self.time_step >= self.MAX_time_step) or (self.get_endeffector_position()[2] < 0.1) or (self.isLimited == True): isDone,IsSuccess = True, False
+        if(distance <= 0.03): isDone,IsSuccess = True,True
 
         totalReward = R_theta + R_distance
-        return totalReward, isDone,isTruncated
+        return totalReward, isDone,IsSuccess
     
     def step(self, angle):
         distance = self.calc_distance(self.target, self.get_endeffector_position())
@@ -215,10 +213,10 @@ class Ned2_control(object):
         # print(f"Linear velocity: {linear_velocity}")
         # print(f"Angle difference: {angle_difference} degrees")
 
-        totalReward,isDone,isTruncated = self.get_reward(distance, angle_difference)
+        totalReward,isDone,IsSuccess = self.get_reward(distance, angle_difference)
         current_state = self.get_state()
 
-        return current_state,totalReward,isDone, isTruncated
+        return current_state,totalReward,isDone, IsSuccess
     
     def set_random_target(self):
         random_pose = self.move_group.get_random_pose()
@@ -241,7 +239,7 @@ class Ned2_control(object):
         state_msg.pose.orientation.w = 0
 
         rospy.wait_for_service('/gazebo/set_model_state')
-        for i in range(100):
+        for i in range(300):
             set_state = rospy.ServiceProxy("/gazebo/set_model_state", SetModelState)
             resp = set_state(state_msg)    
 

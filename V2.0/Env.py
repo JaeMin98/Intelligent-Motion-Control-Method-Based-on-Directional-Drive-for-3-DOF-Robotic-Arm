@@ -187,8 +187,17 @@ class Ned2_control(object):
 
         isDone, IsSuccess = False, False
         # if(self.time_step >= self.MAX_time_step) or (self.get_endeffector_position()[2] < 0.1) : isDone,IsSuccess = True, False
-        if(self.time_step >= self.MAX_time_step) or (self.get_endeffector_position()[2] < 0.1) or (self.isLimited == True): isDone,IsSuccess = True, False
-        if(distance <= 0.03): isDone,IsSuccess = True,True
+        if(self.time_step >= self.MAX_time_step):
+            R_distance += 10
+            isDone,IsSuccess = True, False
+
+        if(self.get_endeffector_position()[2] < 0.1) or (self.isLimited == True): 
+            R_distance -= 30
+            isDone,IsSuccess = True, False
+
+        if(distance <= 0.03):
+            R_distance += 30
+            isDone,IsSuccess = True,True
 
         totalReward = R_theta + R_distance
         return totalReward, isDone,IsSuccess

@@ -9,7 +9,7 @@ import time
 import wandb
 
 wandb.init(project='Refer1')
-wandb.run.name = 'DDPG_V2.0'
+wandb.run.name = 'DDPG_V2.1'
 wandb.run.save()
 
 env = Env.Ned2_control()

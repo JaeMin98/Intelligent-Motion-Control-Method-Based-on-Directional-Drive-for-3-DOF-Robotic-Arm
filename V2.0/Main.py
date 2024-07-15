@@ -17,7 +17,7 @@ agent = Agent(state_size=15, action_size=3, random_seed=123456)
 
 episode_success, success_rate_list = [], []
 
-def ddpg(n_episodes=40000, max_t=200):
+def ddpg(n_episodes=80000, max_t=200):
     for i_episode in range(1, n_episodes+1):
         env.reset()
         states = env.get_state()

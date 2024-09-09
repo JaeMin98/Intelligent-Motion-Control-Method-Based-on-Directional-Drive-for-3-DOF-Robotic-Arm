@@ -124,8 +124,10 @@ class Ned2_control(object):
             elif(self.Limit_joint[i][0] > joint[i]):
                 joint[i] = self.Limit_joint[i][0]
 
-
-        plan = self.move_group.go(joint, wait=self.Iswait)
+        try:
+            plan = self.move_group.go(joint, wait=self.Iswait)
+        except:
+            plan = False
         self.collision_detected = not plan
 
         self.time_step += 1
@@ -137,12 +139,12 @@ class Ned2_control(object):
         self.set_random_target()
         
     def get_joint2_position(self):
-        joint3_pose = self.move_group.get_current_pose(end_effector_link="arm_link").pose
+        joint3_pose = self.move_group.get_current_pose(end_effector_link="link2").pose
         joint3_position = [joint3_pose.position.x, joint3_pose.position.y, joint3_pose.position.z]
         return joint3_position
 
     def get_joint3_position(self):
-        joint3_pose = self.move_group.get_current_pose(end_effector_link="elbow_link").pose
+        joint3_pose = self.move_group.get_current_pose(end_effector_link="link3").pose
         joint3_position = [joint3_pose.position.x, joint3_pose.position.y, joint3_pose.position.z]
         return joint3_position
     

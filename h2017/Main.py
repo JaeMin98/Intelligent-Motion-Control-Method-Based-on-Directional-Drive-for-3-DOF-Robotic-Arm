@@ -15,6 +15,9 @@ wandb.run.save()
 env = Env.Ned2_control()
 agent = Agent(state_size=15, action_size=3, random_seed=123456)
 
+agent.actor_local.load_state_dict(torch.load('./actor.pth'))
+agent.critic_local.load_state_dict(torch.load('./critic.pth'))
+
 episode_success, success_rate_list = [], []
 
 def ddpg(n_episodes=80000, max_t=200):
@@ -26,10 +29,11 @@ def ddpg(n_episodes=80000, max_t=200):
         scores = 0
         episode_ciritic_loss = None
         for timestep in range(max_t):
-            if len(agent.memory) < agent.memory.batch_size * 10:
-                actions = np.random.uniform(-1, 1, size=3)  # 랜덤 액션
-            else:
-                actions = agent.act(np.array(states), add_noise=True)
+            # if len(agent.memory) < agent.memory.batch_size * 10:
+            #     actions = np.random.uniform(-1, 1, size=3)  # 랜덤 액션
+            # else:
+            #     actions = agent.act(np.array(states), add_noise=True)
+            actions = agent.act(np.array(states), add_noise=True)
             next_states, rewards, dones, success = env.step(actions)  # 새로운 env.step() 반환 값에 맞춰 수정
             ciritic_loss = agent.step(np.array([states]), np.array([actions]), np.array([rewards]), np.array([next_states]), np.array([dones]), timestep)
             # ciritic_loss = agent.step(states, actions, rewards, next_states, dones, timestep)
